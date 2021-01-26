@@ -34,9 +34,9 @@ List<String> all_officers = [];
 
  void __get_farms(List<String> all_farms) async {
    var data = await http.get("http://127.0.0.1:8000/api/farms");
-    print(data);
+    // print(data);
    var jsonData = jsonDecode(data.body); 
-  //  print(jsonData[0]['name']);
+  //  print(jsonData[0]);
     // print((jsonData[1]['name']));
 
     var i;
@@ -51,7 +51,7 @@ List<String> all_officers = [];
    var data = await http.get("http://127.0.0.1:8000/officers/all/officers/api/");
     // print(data);
    var jsonData = jsonDecode(data.body); 
-  //  print(jsonData[0]['name']);
+  // print(jsonData[0]);
     // print((jsonData[1]['name']));
 
     var i;
@@ -62,6 +62,15 @@ List<String> all_officers = [];
             
    
   }
+
+      @override 
+        void initState() {
+          // super.initState();
+        __get_officers(all_officers);
+        __get_farms(all_farms);
+        
+       
+      }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,7 +162,9 @@ List<String> all_officers = [];
                                             textColor: Colors.white,
                                             color: MaterialColors.defaultButton,
                                             onPressed: () async {
-                                        
+                                        //  __get_farms(all_farms);
+                                        //  print(all_farms);
+                                        //  __get_officers(all_officers);
                                         final String vet = vetController.text;
                                         final String date = dateController.text;
                                         String farms = jsonEncode(tags);
@@ -184,32 +195,32 @@ List<String> all_officers = [];
                         
                                                 await createVisit(farms, vet, date).then((value)  { 
                                               
-                                           if(value == null)
-                                           {
-                                              Alert(
-                                            context: context, 
+                                          //  if(value == null)
+                                          //  {
+                                          //     Alert(
+                                          //   context: context, 
                                               
-                                              title: "Warning", desc: "Visit Added Successfully"
-                                              
-                                              
-                                              ).show();
-                                                // Navigator.pushNamed(context, 'single/farmer' , arguments: {'mobile': mobile });
-                                           }
-                                           else
-                                           {
-                                                Alert(
-                                            context: context, 
-                                              
-                                              title: "Warning", desc: "Visit could not be added"
+                                          //     title: "Warning", desc: "Visit Added Successfully"
                                               
                                               
-                                              ).show();
+                                          //     ).show();
+                                          //       // Navigator.pushNamed(context, 'single/farmer' , arguments: {'mobile': mobile });
+                                          //  }
+                                          //  else
+                                          //  {
+                                          //       Alert(
+                                          //   context: context, 
+                                              
+                                          //     title: "Warning", desc: "Visit could not be added"
+                                              
+                                              
+                                          //     ).show();
                                           
                                       
                                           //  Navigator.pushNamed(context, 'send/money' , arguments: {'uniqid': uniqid});
                                  
                                           
-                                           }
+                                          //  }
                                            });
                                         
                                             },
