@@ -32,19 +32,20 @@ class InputVisit extends StatelessWidget {
 List<String> all_farms = [];
 List<String> all_officers = [];
 
+  
  void __get_farms(List<String> all_farms) async {
    var data = await http.get("http://127.0.0.1:8000/api/farms");
     // print(data);
    var jsonData = jsonDecode(data.body); 
   //  print(jsonData[0]);
     // print((jsonData[1]['name']));
-
+// setState((){
     var i;
     for(i=0;i<jsonData.length;i++){
           var details = jsonData[i]['id'];                    
           all_farms.add(details);        
            }       
-            
+    // });         
    
   }
  void __get_officers(List<String> all_officers) async {
@@ -53,14 +54,16 @@ List<String> all_officers = [];
    var jsonData = jsonDecode(data.body); 
   // print(jsonData[0]);
     // print((jsonData[1]['name']));
-
+// setState((){
     var i;
     for(i=0;i<jsonData.length;i++){
           var details = jsonData[i]['name']+'#'+jsonData[i]['county'];                    
           all_officers.add(details);        
-           }       
+           }   
+               
             
-   
+// }); 
+
   }
 
       @override 
@@ -95,6 +98,34 @@ List<String> all_officers = [];
         key: _formKey,      
         child: Column(
         children: <Widget>[
+          
+              SizedBox(
+                width: double.infinity,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 34.0, right: 34.0, top: 16),
+                  child: RaisedButton(
+                    textColor: Colors.white,
+                    color: MaterialColors.defaultButton,
+                    onPressed: () {
+                      // Respond to button press
+                      // Navigator.pushReplacementNamed(context, '/home');
+                      // print(all_farmers);
+                    __get_officers(all_officers);
+                  __get_farms(all_farms);
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                    ),
+                    child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 16.0, right: 16.0, top: 12, bottom: 12),
+                        child: Text("Generate Both Lists",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 16.0))),
+                  ),
+                ),
+              ),
         Padding(
                  padding: const EdgeInsets.all(8.0),
                  child:

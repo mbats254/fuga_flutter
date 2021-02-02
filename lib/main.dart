@@ -8,6 +8,7 @@ import 'package:material_kit_flutter/screens/input_farmer.dart';
 import 'package:material_kit_flutter/screens/input_visit.dart';
 import 'package:material_kit_flutter/screens/onboarding.dart';
 import 'package:material_kit_flutter/screens/single_farmer.dart';
+import 'package:material_kit_flutter/screens/login_page.dart';
 
 void main() => runApp(MaterialKitPROFlutter());
 
@@ -28,6 +29,7 @@ class MaterialKitPROFlutter extends StatelessWidget {
           "/input/farmers": (BuildContext context) => new InputFarmer(),
           "/input/visit": (BuildContext context) => new InputVisit(),
           "/single/farmer": (BuildContext context) => new SingleFarmer(),
+          "/login": (BuildContext context) => new LoginScreen(),
          
         });
   }

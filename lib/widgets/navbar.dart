@@ -134,46 +134,30 @@ class _NavbarState extends State<Navbar> {
                         ),
                       ],
                     ),
-                    if (widget.rightOptions)
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => Chat()));
-                            },
-                            child: IconButton(
-                                icon: Icon(Icons.chat_bubble_outline,
-                                    color: !widget.transparent
-                                        ? (widget.bgColor == Colors.white
-                                            ? Colors.black
-                                            : Colors.white)
-                                        : Colors.white,
-                                    size: 22.0),
-                                onPressed: null),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => Cart()));
-                            },
-                            child: IconButton(
-                                icon: Icon(Icons.add_shopping_cart,
-                                    color: !widget.transparent
-                                        ? (widget.bgColor == Colors.white
-                                            ? Colors.black
-                                            : Colors.white)
-                                        : Colors.white,
-                                    size: 22.0),
-                                onPressed: null),
-                          ),
-                        ],
-                      )
+                    // if (widget.rightOptions)
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         // Navigator.push(
+                      //         //     context,
+                      //         //     MaterialPageRoute(
+                      //         //         builder: (context) => Chat()));
+                      //       },
+                      //       child: IconButton(
+                      //           icon: Icon(Icons.chat_bubble_outline,
+                      //               color: !widget.transparent
+                      //                   ? (widget.bgColor == Colors.white
+                      //                       ? Colors.black
+                      //                       : Colors.white)
+                      //                   : Colors.white,
+                      //               size: 22.0),
+                      //           onPressed: null),
+                      //     ),
+                       
+                      //   ],
+                      // )
                   ],
                 ),
                 if (widget.searchBar)
@@ -299,6 +283,7 @@ class _NavbarState extends State<Navbar> {
               ],
             ),
           ),
-        ));
+        )
+        );
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:material_kit_flutter/constants/Theme.dart';
 
 import 'package:material_kit_flutter/widgets/drawer-tile.dart';
-
+import '../screens/login_page.dart';
 class MaterialDrawer extends StatelessWidget {
   final String currentPage;
 
@@ -125,7 +125,8 @@ class MaterialDrawer extends StatelessWidget {
                 icon: Icons.exit_to_app,
                 onTap: () {
                   if (currentPage != "Sign In")
-                    Navigator.pushReplacementNamed(context, '/signin');
+           Navigator.push(context, new MaterialPageRoute(builder: (context) => LoginScreen()
+           ));
                 },
                 iconColor: Colors.black,
                 title: "Sign In",

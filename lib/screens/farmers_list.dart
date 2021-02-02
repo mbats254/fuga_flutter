@@ -125,12 +125,13 @@ class _Farmers_ListState extends State<Farmers_List> {
    var jsonData = jsonDecode(data.body); 
   //  print(jsonData[0]['name']);
     // print((jsonData[1]['name']));
-
+setState(() {
     var i;
     for(i=0;i<jsonData.length;i++){
           var details = jsonData[i]['name']+'#'+jsonData[i]['county'];                    
           all_officers.add(details);        
-           }       
+           }  
+});     
             
    
   }
@@ -180,6 +181,7 @@ class _Farmers_ListState extends State<Farmers_List> {
                     onPressed: () {
                       // Respond to button press
                       // Navigator.pushReplacementNamed(context, '/home');
+                      // print(all_farmers);
                        __get_farmers(all_farmers);
                     },
                     shape: RoundedRectangleBorder(

@@ -49,9 +49,9 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: Navbar(
           title: "Home",
-          searchBar: true,
-          categoryOne: "Categories",
-          categoryTwo: "Best Deals",
+          searchBar: false,
+          categoryOne: "Farmers",
+          categoryTwo: "Officers",
         ),
         backgroundColor: MaterialColors.bgColorScreen,
         // key: _scaffoldKey,
@@ -64,55 +64,19 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 16.0),
                   child: CardHorizontal(
-                      cta: "View article",
-                      title: homeCards["Ice Cream"]['title'],
-                      img: homeCards["Ice Cream"]['image'],
+                      cta: "",
+                      title:'Fuga Application',
                       tap: () {
-                        Navigator.pushReplacementNamed(context, '/pro');
+                        // Navigator.pushReplacementNamed(context, '/pro');
                       }),
                 ),
-                SizedBox(height: 8.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CardSmall(
-                        cta: "View article",
-                        title: homeCards["Makeup"]['title'],
-                        img: homeCards["Makeup"]['image'],
-                        tap: () {
-                          Navigator.pushReplacementNamed(context, '/pro');
-                        }),
-                    CardSmall(
-                        cta: "View article",
-                        title: homeCards["Coffee"]['title'],
-                        img: homeCards["Coffee"]['image'],
-                        tap: () {
-                          Navigator.pushReplacementNamed(context, '/pro');
-                        })
-                  ],
-                ),
-                SizedBox(height: 8.0),
-                CardHorizontal(
-                    cta: "View article",
-                    title: homeCards["Fashion"]['title'],
-                    img: homeCards["Fashion"]['image'],
-                    tap: () {
-                      Navigator.pushReplacementNamed(context, '/pro');
-                    }),
-                SizedBox(height: 8.0),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 32.0),
-                  child: CardSquare(
-                      cta: "View article",
-                      title: homeCards["Argon"]['title'],
-                      img: homeCards["Argon"]['image'],
-                      tap: () {
-                        Navigator.pushReplacementNamed(context, '/pro');
-                      }),
-                )
+             
+
+            
               ],
             ),
           ),
-        ));
+        )
+        );
   }
 }
